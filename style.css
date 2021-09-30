@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'customFont';
+    src: url('./assets/fonts/beautyMountains.ttf');
+}
+
+html,
+body {
+    padding: 0;
+    margin: 5 px;
+    font-family: 'customFont'
+    /* font-family: 'Roboto Condensed', sans-serif; */
+}
+
+html {
+    min-height: 100vh;
+}
+
+body {
+    background-image: linear-gradient(to bottom left, green, #40b0df, white);
+}
+
+heading {
+    display: flex;
+    justify-content: center;
+}
+
+navigationContainer {
+    display: flex;
+    justify-content: center;
+}
+
+navigationBar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 680px;
+}
+
+img {
+    border: solid 4px black;
+}
+
+.main {
+    font-family: Arial, Helvetica, sans-serif;
+}

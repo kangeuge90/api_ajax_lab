@@ -7,33 +7,33 @@
 const awwPosts = fetch('https://www.reddit.com/r/aww/best/.json')
 
 awwPosts
-// .then(response => {
-//     // first then
-//     // then means when the API finishes downloading
-//     // console.log(response);
+    .then(response => {
+        // first then
+        // then means when the API finishes downloading
+        // console.log(response);
 
-//     return response.json(); // converts into javascript object with the data requested
-// })
-    .then(data => {
-    // second then, after we get the javascript object
-    console.log(data);
+        return response.json(); // converts into javascript object with the data requested
+    })
+    .then(posts => {
+        // second then, after we get the javascript object
+        console.log(posts);
 
-    const results = data.children[0];
+        const results = posts.data.children;
 
-    for (result of results) {
+        for (const result of results) {
 
-        // <div> <h2> film title </h2> </div>
-        const div = document.createElement('div');
-        const img = document.createElement('img');
+            // <div> <h2> film title </h2> </div>
+            const div = document.createElement('div');
+            const img = document.createElement('img');
 
-        img.src = result.data.thumbnail; // how do I target OBJECT # 2, not Array piece # 2
-        div.append(img);
+            img.src = result.data.thumbnail; // how do I target OBJECT # 2, not Array piece # 2
+            div.append(img);
 
-        const postTitle = document.createElement('p');
-        postTitle.innerText = result.title;
-        div.append(postTitle);
+            const postTitle = document.createElement('p');
+            postTitle.innerText = result.data.title;
+            div.append(postTitle);
 
-        document.querySelector('.main').append(div); // add div to the the end of our main
+            document.querySelector('.main').append(div); // add div to the the end of our main
 
-    }
-})
+        }
+    })
